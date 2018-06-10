@@ -1,0 +1,29 @@
+# onty-js-simpleExpressServer2
+# .travis.yml
+# by onTy
+
+
+language: node_js
+
+node_js:
+  - "7"
+
+stages:
+  - test
+  - deploy
+
+jobs:
+  include:
+    - stage: test
+    - script: node --version
+    - script: npm --version
+    - stage: deploy
+      script: ./deploy target-1
+
+#before_install:
+#  - npm i -g npm@version-number
+
+cache:
+  directories:
+    - "node_modules"
+
