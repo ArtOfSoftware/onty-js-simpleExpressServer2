@@ -9,27 +9,38 @@ node_js:
   - "7"
 
 stages:
+  - myEnvtValidation
   - myTest
   - myDeploy
 
 jobs:
   include:
-    - stage: myTest
+    - stage: myEnvtValidation
     - script: node --version
     - script: npm --version
     - stage: myDeploy
+
+  provider:       elasticbeanstalk
+  access_key_id: "AKIAI3B37TG2YOSK4EMA"
+  secret_access_key:
+    secure:       "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"
+  region:         "us-east-1"
+  app:            "onty-js-simpleExpressServer2"
+  env:            "onty-eb-env-SimpleExpressServer2"
+  bucket_name:    "onty-deployments-manual"
+
 
 cache:
   directories:
     - "node_modules"
 
 
-myDeploy:
-  provider: elasticbeanstalk
-  access_key_id: "AKIAI3B37TG2YOSK4EMA"
-  secret_access_key:
-    secure: "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"
-  region: "us-east-1"
-  app: "onty-js-simpleExpressServer2"
-  env: "onty-eb-env-SimpleExpressServer2"
-  bucket_name: "onty-deployments-manual"
+#myDeploy:
+#  provider:       elasticbeanstalk
+#  access_key_id: "AKIAI3B37TG2YOSK4EMA"
+#  secret_access_key:
+#    secure:       "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"
+#  region:         "us-east-1"
+#  app:            "onty-js-simpleExpressServer2"
+#  env:            "onty-eb-env-SimpleExpressServer2"
+#  bucket_name:    "onty-deployments-manual"
