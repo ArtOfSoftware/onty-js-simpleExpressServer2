@@ -34,33 +34,34 @@ cache:
 
 
 before_install:
-  - script: echo 1_BEFORE_INSTALL
-  - script: uname -a
-  - script: whoami
-  - script: pwd
-  - script: echo $PATH
-  - script: node --version
-  - script: npm --version
-  - script: node --check *.js
+  script:
+    - echo 1_BEFORE_INSTALL
+    - uname -a
+    - whoami
+    - pwd
+    - echo $PATH
+    - node --version
+    - npm --version
+    - node --check *.js
 
 install:
-  - script: echo 2_INSTALL
-  - script: npm install
+  script: echo 2_INSTALL
+  script: npm install
 
 before_script:
-  - script: echo 3_BEFORE_SCRIPT
+  script: echo 3_BEFORE_SCRIPT
 
 script:
-  - script: echo 4_SCRIPT
+  script: echo 4_SCRIPT
 
 before_cache:   # OPTIONAL (for cleaning up cache)
-  - script: echo 5_BEFORE_CACHE
+  script: echo 5_BEFORE_CACHE
 
 #after_success or after_failure
 
 before_deploy:  #opt
-  - script: echo 6_BEFORE_DEPLOY
-  - script: zip -r --exclude=\*.git\* --exclude=\*node_modules\* buildPackaged.zip
+  script: echo 6_BEFORE_DEPLOY
+  script: zip -r --exclude=\*.git\* --exclude=\*node_modules\* buildPackaged.zip
 
 deploy:         #opt
   - script: echo 7_DEPLOY
