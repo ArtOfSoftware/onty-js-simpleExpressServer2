@@ -49,7 +49,7 @@ install:
 
 before_script:
   - echo 3_BEFORE_SCRIPT
-  - rm -rf .git
+#  - rm -rf .git
 
 script:
   - echo 4_SCRIPT
