@@ -45,26 +45,32 @@ before_install:
     - node --check *.js
 
 install:
-  script: echo 2_INSTALL
-  script: npm install
+  script:
+    - echo 2_INSTALL
+    - npm install
 
 before_script:
-  script: echo 3_BEFORE_SCRIPT
+  script:
+    - echo 3_BEFORE_SCRIPT
 
 script:
-  script: echo 4_SCRIPT
+  script:
+    - echo 4_SCRIPT
 
 before_cache:   # OPTIONAL (for cleaning up cache)
-  script: echo 5_BEFORE_CACHE
+  script:
+    - echo 5_BEFORE_CACHE
 
 #after_success or after_failure
 
 before_deploy:  #opt
-  script: echo 6_BEFORE_DEPLOY
-  script: zip -r --exclude=\*.git\* --exclude=\*node_modules\* buildPackaged.zip
+  script:
+    - echo 6_BEFORE_DEPLOY
+    - zip -r --exclude=\*.git\* --exclude=\*node_modules\* buildPackaged.zip
 
 deploy:         #opt
-  - script: echo 7_DEPLOY
+  - script:
+    - echo 7_DEPLOY
   - provider:       elasticbeanstalk
   - access_key_id: "AKIAI3B37TG2YOSK4EMA"
   - secret_access_key:
@@ -76,10 +82,12 @@ deploy:         #opt
   - bucket_name:    "onty-deployments-manual"
 
 after_deploy:   #opt
-  - script: echo 8_AFTER_DEPLOY
+  script:
+    - echo 8_AFTER_DEPLOY
 
 after_script:
-  - script: echo 9_AFTER_SCRIPT
+  script:
+    - echo 9_AFTER_SCRIPT
 
 
 
