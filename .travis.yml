@@ -21,7 +21,7 @@ node_js:
 #    - stage: test
 #    - script: node --check bin/www app.js
 #    - stage: myPackage
-#    - script: zip -r --exclude=\*.git\* --exclude=\*node_modules\* buildPackaged.zip
+#    - script: zip -r buildPackaged.zip . --exclude=\*.git\* --exclude=\*node_modules\*
 #
 #    - stage: deploy
 #    - deploy: true
@@ -61,7 +61,7 @@ before_cache:   # OPTIONAL (for cleaning up cache)
 
 before_deploy:  #opt
   - echo 6_BEFORE_DEPLOY
-  - zip -r --exclude=\*.git\* --exclude=\*node_modules\* buildPackaged.zip .
+  - zip -r buildPackaged.zip . --exclude=\*.git\* --exclude=\*node_modules\*\
 
 deploy:         #opt
 #  - echo 7_DEPLOY

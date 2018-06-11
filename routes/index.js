@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var util = require("util");
 
 // GET home page.
 router.get('/', function(req, res, next) {
@@ -25,10 +26,10 @@ router.get('/inconsistent', function(req, res, next) {
 		showOrNot.push(v);
 	}
 
-	let text = "AND WE HAVE:";
+	let text = "<h3>AND WE HAVE:</h3>";
 	for ( let i=0; i<count; i++ ) {
 		if ( showOrNot[i] )
-			text += " " + data[i];
+			text += " <tt style='font-size: 30px;'>" + data[i] + "</tt>";
 	}
 
 	res.send( text );
