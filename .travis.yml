@@ -62,6 +62,7 @@ before_cache:   # OPTIONAL (for cleaning up cache)
 before_deploy:  #opt
   - echo 6_BEFORE_DEPLOY
   - zip -r buildPackaged.zip . --exclude=\*.git\* --exclude=\*node_modules\*\
+  - ls -la .
 
 deploy:         #opt
 #  - echo 7_DEPLOY
