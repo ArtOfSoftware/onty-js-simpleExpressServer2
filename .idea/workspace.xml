@@ -42,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="742">
-              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+              <caret line="65" selection-start-line="65" selection-end-line="65" />
             </state>
           </provider>
         </entry>
@@ -317,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528687269446</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="trying travis ci integration">
+      <created>1528687510963</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1528687510963</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -491,7 +498,7 @@
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="742">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
         </state>
       </provider>
     </entry>

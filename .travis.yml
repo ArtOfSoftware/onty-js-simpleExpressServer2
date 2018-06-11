@@ -49,7 +49,6 @@ install:
 
 before_script:
   - echo 3_BEFORE_SCRIPT
-#  - rm -rf .git
 
 script:
   - echo 4_SCRIPT
@@ -61,8 +60,10 @@ before_cache:   # OPTIONAL (for cleaning up cache)
 
 before_deploy:  #opt
   - echo 6_BEFORE_DEPLOY
-  - zip -r buildPackaged.zip . --exclude=\*.git\* --exclude=\*node_modules\*\
+  - zip -r /tmp/buildPackaged.zip . --exclude=\*.git\* --exclude=\*node_modules\*\
+  - pwd
   - ls -la .
+  - ls -la /tmp/buildPackaged.zip
 
 deploy:         #opt
 #  - echo 7_DEPLOY
@@ -70,7 +71,7 @@ deploy:         #opt
   access_key_id: "AKIAI3B37TG2YOSK4EMA"
   secret_access_key:
     secure:       "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"
-  zip-file:       buildPackaged.zip
+  zip-file:       /tmp/buildPackaged.zip
   region:         "us-east-1"
   app:            "onty-js-simpleExpressServer2"
   env:            "onty-eb-env-SimpleExpressServer2"
