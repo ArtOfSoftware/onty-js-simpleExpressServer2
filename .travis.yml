@@ -69,8 +69,8 @@ deploy:         #opt
 #  - echo 7_DEPLOY
   provider:       elasticbeanstalk
   access_key_id: "AKIAI3B37TG2YOSK4EMA"
-  secret_access_key:
-    secure:       "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"
+  secret_access_key: "NN0r9C7GY0JtYopE3XbG+S3unh6npfWAkQ5xbL1e"
+#    secure:
   zip-file:       /tmp/buildPackaged.zip
   region:         "us-east-1"
   app:            "onty-js-simpleExpressServer2"
