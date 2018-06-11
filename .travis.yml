@@ -34,60 +34,51 @@ cache:
 
 
 before_install:
-  script:
-    - echo 1_BEFORE_INSTALL
-    - uname -a
-    - whoami
-    - pwd
-    - echo $PATH
-    - node --version
-    - npm --version
-    - node --check *.js
+  - echo 1_BEFORE_INSTALL
+  - uname -a
+  - whoami
+  - pwd
+  - echo $PATH
+  - node --version
+  - npm --version
+  - node --check *.js
 
 install:
-  script:
-    - echo 2_INSTALL
-    - npm install
+  - echo 2_INSTALL
+  - npm install
 
 before_script:
-  script:
-    - echo 3_BEFORE_SCRIPT
+  - echo 3_BEFORE_SCRIPT
 
 script:
-  script:
-    - echo 4_SCRIPT
+  - echo 4_SCRIPT
 
 before_cache:   # OPTIONAL (for cleaning up cache)
-  script:
-    - echo 5_BEFORE_CACHE
+  - echo 5_BEFORE_CACHE
 
 #after_success or after_failure
 
 before_deploy:  #opt
-  script:
-    - echo 6_BEFORE_DEPLOY
-    - zip -r --exclude=\*.git\* --exclude=\*node_modules\* buildPackaged.zip
+  - echo 6_BEFORE_DEPLOY
+  - zip -r --exclude=\*.git\* --exclude=\*node_modules\* buildPackaged.zip
 
 deploy:         #opt
-  - script:
-    - echo 7_DEPLOY
-  - provider:       elasticbeanstalk
-  - access_key_id: "AKIAI3B37TG2YOSK4EMA"
-  - secret_access_key:
-      secure:       "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"
-  - zip-file:       buildPackaged.zip
-  - region:         "us-east-1"
-  - app:            "onty-js-simpleExpressServer2"
-  - env:            "onty-eb-env-SimpleExpressServer2"
-  - bucket_name:    "onty-deployments-manual"
+  - echo 7_DEPLOY
+  provider:       elasticbeanstalk
+  access_key_id: "AKIAI3B37TG2YOSK4EMA"
+  secret_access_key:
+    secure:       "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"
+  zip-file:       buildPackaged.zip
+  region:         "us-east-1"
+  app:            "onty-js-simpleExpressServer2"
+  env:            "onty-eb-env-SimpleExpressServer2"
+  bucket_name:    "onty-deployments-manual"
 
 after_deploy:   #opt
-  script:
-    - echo 8_AFTER_DEPLOY
+  - echo 8_AFTER_DEPLOY
 
 after_script:
-  script:
-    - echo 9_AFTER_SCRIPT
+  - echo 9_AFTER_SCRIPT
 
 
 
