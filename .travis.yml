@@ -63,7 +63,7 @@ before_deploy:  #opt
   - zip -r --exclude=\*.git\* --exclude=\*node_modules\* buildPackaged.zip
 
 deploy:         #opt
-  - echo 7_DEPLOY
+#  - echo 7_DEPLOY
   provider:       elasticbeanstalk
   access_key_id: "AKIAI3B37TG2YOSK4EMA"
   secret_access_key:
